@@ -77,6 +77,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" dir="auto" suppressHydrationWarning>
       <head>
         {HEAD_SCRIPTS ? <Script id="headscript">{HEAD_SCRIPTS}</Script> : null}
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3614504270218797"
+          crossOrigin="anonymous" />
+        <Script defer src="https://cloud.umami.is/script.js" data-website-id="ace0f5f1-8f36-4d8b-a122-801a30143f39" />
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
@@ -89,9 +92,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </I18Provider>
           </StoreProvider>
         </ThemeProvider>
-        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3614504270218797"
-          crossOrigin="anonymous" />
-        <Script defer src="https://cloud.umami.is/script.js" data-website-id="ace0f5f1-8f36-4d8b-a122-801a30143f39" />
         <Toaster />
       </body>
     </html>
