@@ -58,6 +58,9 @@ export const metadata: Metadata = {
     },
     description: APP_DESCRIPTION,
   },
+  other: {
+    "msvalidate.01": "B6FE76A783A1770409EC903DE2C7AC6A"
+  }
 }
 
 export const viewport: Viewport = {
@@ -72,7 +75,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" dir="auto" suppressHydrationWarning>
-      <head>{HEAD_SCRIPTS ? <Script id="headscript">{HEAD_SCRIPTS}</Script> : null}</head>
+      <head>
+        {HEAD_SCRIPTS ? <Script id="headscript">{HEAD_SCRIPTS}</Script> : null}
+      </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <StoreProvider>
@@ -84,6 +89,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </I18Provider>
           </StoreProvider>
         </ThemeProvider>
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3614504270218797"
+          crossOrigin="anonymous" />
+        <Script defer src="https://cloud.umami.is/script.js" data-website-id="ace0f5f1-8f36-4d8b-a122-801a30143f39" />
         <Toaster />
       </body>
     </html>
